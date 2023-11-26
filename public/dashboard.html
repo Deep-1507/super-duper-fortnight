@@ -1,0 +1,66 @@
+<!-- views/dashboard.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    #userDetails {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+
+  <div id="userDetails">
+    {{#if user.profilePic}}
+      <img src="data:image/jpeg;base64,{{user.profilePic}}" alt="Profile Picture">
+    {{/if}}
+    <p><strong>Name:</strong> {{user.name}}</p>
+    <p><strong>Email:</strong> {{user.email}}</p>
+    <p><strong>Phone:</strong> {{user.phone}}</p>
+    <p><strong>Address:</strong> {{user.address}}</p>
+    <p><strong>Username:</strong> {{user.username}}</p>
+  </div>
+</body>
+</html>
