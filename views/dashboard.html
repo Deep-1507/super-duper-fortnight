@@ -1,0 +1,24 @@
+<!-- views/dashboard.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Dashboard</h1>
+  {{#if user.profilePic}}
+    <div id="userDetails">
+      <img src="data:image/jpeg;base64,{{user.profilePic}}" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px;">
+      <p><strong>Name:</strong> {{user.name}}</p>
+      <p><strong>Email:</strong> {{user.email}}</p>
+      <p><strong>Phone:</strong> {{user.phone}}</p>
+      <p><strong>Address:</strong> {{user.address}}</p>
+      <p><strong>Username:</strong> {{user.username}}</p>
+    </div>
+  {{else}}
+    <p>No profile picture available.</p>
+  {{/if}}
+</body>
+</html>
